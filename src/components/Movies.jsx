@@ -42,8 +42,6 @@ const Movies = ({viewTrailer}) => {
         window.scrollTo(0, 0)
     }, [searchQuery])
 
-    console.log('test')
-
     return (
         <div data-testid="movies" className='movie-grid'>
             {moviesSlice.movies?.map((movie, index) => {
