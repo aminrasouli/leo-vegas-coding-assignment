@@ -2,8 +2,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import starredSlice from '../data/starredSlice'
 import watchLaterSlice from '../data/watchLaterSlice'
 import placeholder from '../assets/not-found-500X750.jpeg'
+import {forwardRef} from "react";
 
-const Movie = ({ movie, viewTrailer, closeCard }) => {
+const Movie = forwardRef(({movie, viewTrailer }, ref) => {
 
     const state = useSelector((state) => state)
     const { starred, watchLater } = state
@@ -20,7 +21,7 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper" ref={ref}>
         <div className="card" onClick={(e) => e.currentTarget.classList.add('opened')} >
             <div className="card-body text-center">
                 <div className="overlay" />
@@ -67,6 +68,6 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
         </div>
     </div>        
     )
-}
+})
 
 export default Movie

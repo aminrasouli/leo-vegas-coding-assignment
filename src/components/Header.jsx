@@ -30,7 +30,6 @@ const Header = ({ searchMovies }) => {
       </nav>
 
       <div className="input-group rounded">
-        <Link to="/" onClick={(e) => searchMovies('')} className="search-link" >
           <input type="search" data-testid="search-movies"
             onKeyUp={(e) => searchMovies(e.target.value)} 
             className="form-control rounded" 
@@ -38,8 +37,7 @@ const Header = ({ searchMovies }) => {
             aria-label="Search movies" 
             aria-describedby="search-addon" 
             />
-        </Link>            
-      </div>      
+      </div>
     </header>
   )
 }
